@@ -2,12 +2,14 @@
 
 A turtle based geometry library for creating parametric line drawings. Used in the Gram Drawing Language.
 
+Test it out in the [playground](https://leomcelroy.com/gram-js-editor/).
+
 Better documentation coming.
 
 Can be imported like:
 
 ```javascript
-export { drawTurtle, Turtle, group } from "https://leomcelroy.com/gram-js/exports.js";
+export { Turtle, drawTurtle, group } from "https://leomcelroy.com/gram-js/exports.js";
 ```
 
 Here are available methods on the Turtle class:
@@ -29,9 +31,9 @@ Here are available methods on the Turtle class:
 - **fillColor**(color: *string*): *turtle*
 - **strokeWidth**(thickness): *turtle*
 - **strokeColor**(color: *string*): *turtle*
-- **strokeLinecap**(type): *turtle*
-- **strokeLinejoin**(type): *turtle*
-- **floodFill**(color): *turtle*
+- **floodFill**(color: *string*): *turtle*
+- **strokeLinecap**(type: *string*): *turtle*
+- **strokeLinejoin**(type: *string*): *turtle*
 - **group**(): *turtle*
 - **flatten**(): *turtle*
 - **getPathData**(merge: *boolean* = true): *string*
