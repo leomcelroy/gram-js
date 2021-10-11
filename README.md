@@ -4,7 +4,15 @@ A turtle based geometry library for creating parametric line drawings. Used in t
 
 Better documentation coming.
 
+Can be imported like:
+
+```javascript
+export { drawTurtle, Turtle, group } from "https://leomcelroy.com/gram-js/exports.js";
+```
+
 Here are available methods on the Turtle class:
+
+
 
 ```javascript
 export class Turtle {
