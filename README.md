@@ -79,11 +79,11 @@ Here are available methods on the Turtle class:
 You can reference special points on the Turtle with these methods. "l" stands for left, "c" for center, "r" for right, "t" for top, and "b" for bottom.
 
 <pre>
-"lt" -- "ct" -- "rt" 
-  |       |       |  
-"lc" -- "cc" -- "rc"   
-  |       |       |  
-"lb" -- "cb" -- "rb" 
+lt -- ct -- rt 
+ |     |     |        
+lc -- cc -- rc   
+ |     |     |      
+lb -- cb -- rb 
 </pre>
 
 - **lt**(): *[number, number]*
