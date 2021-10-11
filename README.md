@@ -15,7 +15,7 @@ Here are available methods on the Turtle class:
 - **firstPath**(): *path* returns first path
 - **lastPath**(): *path* returns last path
 - **getPoint**(i: *number*): *[number, number]* returns point in Turtle from index i (negative i indexes from end of Turtle)
-- **add_point**(point, down = true): *turtle*
+- **addPoint**(point, down = true): *turtle*
 - **pathMap**(func): *turtle*: applies function to all paths
 - **pointMap**(func): *turtle*: applies function to all points
 - **pointFilter**(func): *turtle*: filters points with functions
