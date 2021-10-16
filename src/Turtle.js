@@ -92,7 +92,7 @@ export class Turtle {
 
 		this.savedStates = [];
 
-		this.booleanScale = 100;
+		this.booleanScale = 10000;
 		
 		if (init) {
 			this.angle = init.angle;

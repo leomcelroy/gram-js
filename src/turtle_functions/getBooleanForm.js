@@ -20,6 +20,10 @@ const pointAdjust = (p, scale) => {
 }
 
 export function getBooleanForm(turtle) {
+  // set turtle.prototype.booleanScale
+  // console.log(turtle.width, turtle.height)
+  // turtle.prototype.booleanScale = 10000
+  
 	let [tool, ...body] = turtle.path.reverse();
 	tool = Array.isArray(tool) ? flatten(tool) : [ tool ];
 	body = Array.isArray(body) ? flatten(body) : [ body ];
