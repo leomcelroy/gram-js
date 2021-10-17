@@ -70,6 +70,11 @@ import { flatten } from "./turtle_functions/flatten.js";
 
 import { group } from "./group.js";
 
+import { newUnion } from "./turtle_functions/new-union.js";
+import { newIntersection} from "./turtle_functions/new-intersection.js";
+import { newDifference } from "./turtle_functions/new-difference.js";
+import { newXor } from "./turtle_functions/new-xor.js";
+
 
 // import { wrap } from "./turtle_functions/wrap.js";
 // import { subdivide } from "./turtle_functions/subdivide.js";
@@ -233,13 +238,18 @@ export class Turtle {
 	outline() { return offset(0, { endType: "etClosedPolygon" }, this) };
 	expand(distance) { return offset(distance, { endType: "etClosedPolygon" }, this) };
 	// should these booleans take arguments
-	intersect() { return this.overwrite(intersect(this, arguments)) };
-	difference() { return this.overwrite(difference(this, arguments)) };
-	union() { return this.overwrite(union(this, arguments)) };
-	xor() { return this.overwrite(xor(this)) };
-	text(word) { return text(word, this) };
+	// intersect() { return this.overwrite(intersect(this, arguments)) };
+	// difference() { return this.overwrite(difference(this, arguments)) };
+	// union() { return this.overwrite(union(this, arguments)) };
+	// xor() { return this.overwrite(xor(this)) };
+	text(word) { return text(word, this) }; // TODo: use opentype js
 	dogbone(radius, all = false) { return dogbone(radius, all, this) };
 	trim(start, end) { return trim(start, end, this) }; // not doced
+
+	union() { return this.overwrite(newUnion(this, arguments)) };
+	intersect() { return this.overwrite(newIntersection(this, arguments)) };
+	difference() { return this.overwrite(newDifference(this, arguments)) };
+	xor() { return this.overwrite(newXor(this, arguments)) };
 
 	placeAlong(turtle) { return placeAlong(turtle, this) }; // not doced
 	placealong(turtle) { return placeAlong(turtle, this) }; // not doced // dup
