@@ -88,21 +88,21 @@ lc -- cc -- rc
 lb -- cb -- rb 
 </pre>
 
-- **lt**(): *[number, number]*
-- **lc**(): *[number, number]*
-- **lb**(): *[number, number]*
-- **ct**(): *[number, number]*
-- **cc**(): *[number, number]*
-- **cb**(): *[number, number]*
-- **rt**(): *[number, number]*
-- **rc**(): *[number, number]*
-- **rb**(): *[number, number]*
+- **lt**: *[number, number]*
+- **lc**: *[number, number]*
+- **lb**: *[number, number]*
+- **ct**: *[number, number]*
+- **cc**: *[number, number]*
+- **cb**: *[number, number]*
+- **rt**: *[number, number]*
+- **rc**: *[number, number]*
+- **rb**: *[number, number]*
 
 You can also reference:
 
-- **start**(): *[number, number]* returns first point
-- **end**(): *[number, number]* returns last point
-- **centroid**(): *[number, number]* returns centroid
-- **width**(): *number* returns width
-- **height**(): *number* returns height
-- **points**(): *list of numbers*
+- **start**: *[number, number]* returns first point
+- **end**: *[number, number]* returns last point
+- **centroid**: *[number, number]* returns centroid
+- **width**: *number* returns width
+- **height**: *number* returns height
+- **points**: *list of numbers*
