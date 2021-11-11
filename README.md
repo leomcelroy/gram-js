@@ -9,7 +9,7 @@ Better documentation coming.
 Can be imported like:
 
 ```javascript
-export { Turtle, drawTurtle, group } from "https://leomcelroy.com/gram-js/exports.js";
+import { Turtle, drawTurtle, group } from "https://leomcelroy.com/gram-js/exports.js";
 ```
 
 Here are available methods on the Turtle class:
