@@ -1,6 +1,8 @@
-export function setBooleanForm(clippedPaths, turtle) {
+
+export function setBooleanForm(clippedPaths, turtle, scale) {
+
 	let newPaths = Object.values(clippedPaths.paths).map(p => {
-		p = p.map( ({X, Y}) => ({x: X/turtle.booleanScale, y: Y/turtle.booleanScale}) );
+		p = p.map( ({X, Y}) => ({x: X/scale, y: Y/scale}) );
 		// I automatically close the paths
 		const points = [ ...p, p[0] ];
 

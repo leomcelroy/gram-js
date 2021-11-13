@@ -128,7 +128,7 @@ export class Turtle {
 	pointFilter(func) { return pointFilter(func, this) };
 	extrema() { return extrema(this) };
 	copy() { return copy(this) };
-	setBooleanForm(paths) { return setBooleanForm(paths, this) };
+	setBooleanForm(paths) { return setBooleanForm(paths, this, this.booleanScale) };
 	getBooleanForm() { return getBooleanForm(this) };
 	point(target) { return point(target, this) };
 
@@ -238,18 +238,19 @@ export class Turtle {
 	outline() { return offset(0, { endType: "etClosedPolygon" }, this) };
 	expand(distance) { return offset(distance, { endType: "etClosedPolygon" }, this) };
 	// should these booleans take arguments
-	// intersect() { return this.overwrite(intersect(this, arguments)) };
-	// difference() { return this.overwrite(difference(this, arguments)) };
-	// union() { return this.overwrite(union(this, arguments)) };
-	// xor() { return this.overwrite(xor(this)) };
+	intersect() { return this.overwrite(intersect(this, arguments)) };
+	difference() { return this.overwrite(difference(this, arguments)) };
+	union() { return this.overwrite(union(this, arguments)) };
+	xor() { return this.overwrite(xor(this)) };
+
 	text(word) { return text(word, this) }; // TODo: use opentype js
 	dogbone(radius, all = false) { return dogbone(radius, all, this) };
 	trim(start, end) { return trim(start, end, this) }; // not doced
 
-	union() { return this.overwrite(newUnion(this, arguments)) };
-	intersect() { return this.overwrite(newIntersection(this, arguments)) };
-	difference() { return this.overwrite(newDifference(this, arguments)) };
-	xor() { return this.overwrite(newXor(this, arguments)) };
+	// union() { return this.overwrite(newUnion(this, arguments)) };
+	// intersect() { return this.overwrite(newIntersection(this, arguments)) };
+	// difference() { return this.overwrite(newDifference(this, arguments)) };
+	// xor() { return this.overwrite(newXor(this, arguments)) };
 
 	placeAlong(turtle) { return placeAlong(turtle, this) }; // not doced
 	placealong(turtle) { return placeAlong(turtle, this) }; // not doced // dup
@@ -293,7 +294,8 @@ export class Turtle {
 	flood_fill(color) { return floodFill(color, this) }; // dup
 
 	group() { // not doced
-		// return group(this, group(...arguments));
+		if (arguments.length === 0) return this;
+		// return this.overwrite(group(this, group(...arguments)));
 		return this.overwrite(group(this, ...arguments));
 	}
 
