@@ -36,15 +36,15 @@ export function getBooleanForm(turtle, limiter) {
 
   const dynamicScale = Math.max(...distances);
   const limiterMapped = Math.floor(1/limiter + 1)*10
-  turtle.booleanScale = limiter === 0 || limiterMapped < dynamicScale 
-    ? dynamicScale 
-    : limiterMapped;
+  turtle.booleanScale = limiter !== 0 && limiterMapped > dynamicScale 
+    ? limiterMapped 
+    : dynamicScale;
   
 	let [tool, ...body] = turtle.path.reverse();
 	tool = Array.isArray(tool) ? flatten(tool) : [ tool ];
 	body = Array.isArray(body) ? flatten(body) : [ body ];
-	tool = tool.map(p => p.points.map(p => pointAdjust(p, dynamicScale)));
-	body = body.map(p => p.points.map(p => pointAdjust(p, dynamicScale)));
+	tool = tool.map(p => p.points.map(p => pointAdjust(p, turtle.booleanScale)));
+	body = body.map(p => p.points.map(p => pointAdjust(p, turtle.booleanScale)));
 
 	return body && tool ? [ body, tool ] : tool;
 };
