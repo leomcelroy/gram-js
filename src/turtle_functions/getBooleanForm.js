@@ -21,7 +21,7 @@ const pointAdjust = (p, scale) => {
 
 const dist = (p0, p1) => Math.sqrt((p1.x - p0.x)**2 + (p1.y - p0.y)**2);
 
-export function getBooleanForm(turtle, scale) {
+export function getBooleanForm(turtle, limiter) {
   // set turtle.prototype.booleanScale
   // console.log(turtle.width, turtle.height)
   // turtle.prototype.booleanScale = 10000
@@ -35,8 +35,10 @@ export function getBooleanForm(turtle, scale) {
   }
 
   const dynamicScale = Math.max(...distances);
-  console.log(dynamicScale);
-  turtle.booleanScale = dynamicScale;
+  const limiterMapped = Math.floor(1/limiter + 1)*10
+  turtle.booleanScale = limiter === 0 || limiterMapped < dynamicScale 
+    ? dynamicScale 
+    : limiterMapped;
   
 	let [tool, ...body] = turtle.path.reverse();
 	tool = Array.isArray(tool) ? flatten(tool) : [ tool ];

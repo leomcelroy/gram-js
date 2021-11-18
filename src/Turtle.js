@@ -129,7 +129,7 @@ export class Turtle {
 	extrema() { return extrema(this) };
 	copy() { return copy(this) };
 	setBooleanForm(paths) { return setBooleanForm(paths, this, this.booleanScale) };
-	getBooleanForm() { return getBooleanForm(this) };
+	getBooleanForm(limiter = 0) { return getBooleanForm(this, limiter) };
 	point(target) { return point(target, this) };
 
 	store() {

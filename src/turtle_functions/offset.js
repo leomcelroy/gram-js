@@ -18,8 +18,9 @@ export function offset(distance, ops, turtle) {
     endType = closed ? 'etClosedRound' : "etOpenRound";
   }
 
-  const paths =  turtle.getBooleanForm().flat();
+  const paths =  turtle.getBooleanForm(distance).flat();
   const subject = new Shape(paths, true);
+
   const result = subject.offset(distance*turtle.booleanScale, {
     jointType,
     endType, // et Open/Closed Polygon/Round/Line/Butt
