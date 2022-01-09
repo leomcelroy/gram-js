@@ -70,10 +70,10 @@ import { flatten } from "./turtle_functions/flatten.js";
 
 import { group } from "./group.js";
 
-import { newUnion } from "./turtle_functions/new-union.js";
-import { newIntersection} from "./turtle_functions/new-intersection.js";
-import { newDifference } from "./turtle_functions/new-difference.js";
-import { newXor } from "./turtle_functions/new-xor.js";
+// import { newUnion } from "./turtle_functions/new-union.js";
+// import { newIntersection} from "./turtle_functions/new-intersection.js";
+// import { newDifference } from "./turtle_functions/new-difference.js";
+// import { newXor } from "./turtle_functions/new-xor.js";
 
 
 // import { wrap } from "./turtle_functions/wrap.js";
