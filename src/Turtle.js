@@ -61,6 +61,7 @@ import { dashed } from "./turtle_functions/dashed.js";
 import { centroid } from "./turtle_functions/centroid.js";
 import { vec } from "./turtle_functions/vec.js";
 import { bezier } from "./turtle_functions/bezier.js";
+import { pathD } from "./turtle_functions/pathD.js";
 import { slide } from "./turtle_functions/slide.js";
 import { polylines } from "./turtle_functions/polylines.js";
 import { getTabs } from "./turtle_functions/getTabs.js";
@@ -258,7 +259,15 @@ export class Turtle {
 	// should be able to get angle at point, or derivative
 
 	dashed(number) { return dashed(number, this) }; // not doced
-	bezier(string) { return bezier(string, this) }; // not doced
+	pathD(string) { return pathD(string, this) }; // not doced
+	bezier(...pts) { 
+		return bezier(
+			[
+				[ this.end.x, this.end.y ], 
+				...pts
+			], 
+			this) 
+	}; // not doced
 	slide(angle, distance) { return slide(angle, distance, this) }; // not doced
 	polylines(asArray = false, prec = 0) { return polylines(asArray, prec, this) }; // not doced
 
