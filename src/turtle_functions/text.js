@@ -413,10 +413,7 @@ export function text(string, turtle) {
 	cache[string] = polylines;
 
 	polylines.forEach( pl => {
-		pl.forEach( (point, i) => {
-			if (i === 0) turtle.newStroke(point);
-			turtle.goTo(point);
-		})
+		pl.forEach( (point, i) => turtle.goTo(point, i !== 0) )
 	})
 	turtle.flip("x");
 

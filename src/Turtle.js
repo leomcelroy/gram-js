@@ -150,62 +150,35 @@ export class Turtle {
 	construction() { return construction(this) };
 	
 	lastAngle() { return lastAngle(this) };
-	lastangle() { return lastAngle(this) }; // dup
-	last_angle() { return lastAngle(this) }; // dup
 
 	alignHead() { return alignHead(this) };
-	alignhead() { return alignHead(this) }; // dup
-	align_head() { return alignHead(this) }; // dup
 
 	fillColor(color) { return fillColor(color, this) };
-	fillcolor(color) { return fillColor(color, this) }; // dup
-	fill_color(color) { return fillColor(color, this) }; // dup
 
 	strokeWidth(thickness) { return strokeWidth(thickness, this) };
-	strokewidth(thickness) { return strokeWidth(thickness, this) }; // dup
-	stroke_width(thickness) { return strokeWidth(thickness, this) }; // dup
 
 	strokeColor(color) { return strokeColor(color, this) };
-	strokecolor(color) { return strokeColor(color, this) }; // dup
-	stroke_color(color) { return strokeColor(color, this) }; // dup
 
 	strokeLinecap(type) { return strokeLinecap(type, this) };
-	strokelinecap(type) { return strokeLinecap(type, this) }; // dup
-	stroke_linecap(type) { return strokeLinecap(type, this) }; // dup
-	// line_cap(type) { return strokeLinecap(type, this) }; // dup
-
 
 	strokeLinejoin(type) { return strokeLinejoin(type, this) };
-	strokelinejoin(type) { return strokeLinejoin(type, this) }; // dup
-	stroke_linejoin(type) { return strokeLinejoin(type, this) }; // dup
-	// line_join(type) { return strokeLinejoin(type, this) }; // dup
 
 	// turtle operations
 	goTo(point, down = true) { return goTo(pointConversion(point), down, this) };
-	goto(point, down = true) { return goTo(pointConversion(point), down, this) };
-	go_to(point, down = true) { return goTo(pointConversion(point), down, this) };
 	forward(distance, down = true) { return forward(distance, down, this) };
 	vec(vector, down = true) { return vec(vector, down, this) }; // not doced
 	arc(angle, radius, down = true) { return arc(angle, radius, down, this) };
 	turnForward(angle, distance) { return turnForward(angle, distance, this) };
-	turnforward(angle, distance) { return turnForward(angle, distance, this) };
-	turn_forward(angle, distance) { return turnForward(angle, distance, this) };
 
 	turn(angle) { return turn(angle, this) };
 	right(angle) { return turn(-angle, this) };
 	left(angle) { return turn(angle, this) };
 
 	setAngle(angle) { return setAngle(angle, this) };
-	setangle(angle) { return setAngle(angle, this) }; // dup
-	set_angle(angle) { return setAngle(angle, this) }; // dup
 
-    flatGoTo(point, axis) { return flatGoTo(pointConversion(point), axis, this) };
-	flatgoto(point, axis) { return flatGoTo(pointConversion(point), axis, this) }; // dup
-	flat_goto(point, axis) { return flatGoTo(pointConversion(point), axis, this) }; // dup
+  flatGoTo(point, axis) { return flatGoTo(pointConversion(point), axis, this) };
 
 	closePath() { return closePath(this) };
-	closepath() { return closePath(this) }; // dup
-	close_path() { return closePath(this) }; // dup
 
 	translate(toPoint, fromPoint = [0, 0]) { return translate(pointConversion(toPoint), pointConversion(fromPoint), this) }; 
 	// translate(x, y) { return translate(x, y, this) };
@@ -226,14 +199,10 @@ export class Turtle {
 	fillet(radius) { return fillet(radius, this) };
 
 	roundCorners(radius, all = false) { return roundCorners(radius, all, this) };
-	roundcorners(radius, all = false) { return roundCorners(radius, all, this) }; // dup
-	round_corners(radius, all = false) { return roundCorners(radius, all, this) }; // dup
 
 	thicken(thickness) { return thicken(thickness, this) };
 
 	copyPaste(num, transformations) { return copyPaste(num, transformations, this) };
-    copypaste(num, transformations) { return copyPaste(num, transformations, this) }; // dup
-    copy_paste(num, transformations) { return copyPaste(num, transformations, this) }; // dup
 
 	offset(distance, options = {}) { return offset(distance, options, this) }; // not doced
 	outline() { return offset(0, { endType: "etClosedPolygon" }, this) };
@@ -254,8 +223,6 @@ export class Turtle {
 	// xor() { return this.overwrite(newXor(this, arguments)) };
 
 	placeAlong(turtle) { return placeAlong(turtle, this) }; // not doced
-	placealong(turtle) { return placeAlong(turtle, this) }; // not doced // dup
-	place_along(turtle) { return placeAlong(turtle, this) }; // not doced // dup
 	// should be able to get angle at point, or derivative
 
 	dashed(number) { return dashed(number, this) }; // not doced
@@ -272,12 +239,8 @@ export class Turtle {
 	polylines(asArray = false, prec = 0) { return polylines(asArray, prec, this) }; // not doced
 
 	getTabs() { return getTabs(this) } // not doced
-	gettabs() { return getTabs(this) } // not doced // dup
-	get_tabs() { return getTabs(this) } // not doced // dup
 
 	lSystem(args) { return lSystem(args, this)}
-	lsystem(args) { return lSystem(args, this)} //dup
-	l_system(args) { return lSystem(args, this)} //dup
 
 	transform(matrix) { return transform(matrix, this) };
 
@@ -299,8 +262,6 @@ export class Turtle {
 
 
 	floodFill(color) { return floodFill(color, this) };
-	floodfill(color) { return floodFill(color, this) }; // dup
-	flood_fill(color) { return floodFill(color, this) }; // dup
 
 	group() { // not doced
 		if (arguments.length === 0) return this;
@@ -326,21 +287,6 @@ export class Turtle {
 
 		return merge ? result.join(" ") : result;
 	}
-
-
-
-	// show(color) {}; // no need
-	// svg() { return svg(this) };
-	// render(id) { return render(id, this) };
-
-	// wrap() { return () };
-	// subdivide() { return () };
-
-	// circle() // no need
-	// rectangle() { return () }; // no need
-	// penup() { this.down = false; return this };
-	// pendown() { this.down = true; return this };
-
 }
 
 

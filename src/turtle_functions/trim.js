@@ -9,7 +9,7 @@ export function trim(start, end, turtle) {
     path.points.forEach( p => {
       if (count >= start && count <= end) {
         if (!started) {
-          newTurtle.newStroke(p);
+          turtle.goTo(p, false)
           started = true;
         } else {
           newTurtle.addPoint(p);
